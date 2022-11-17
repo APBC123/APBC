@@ -4,7 +4,7 @@
 #include<stdlib.h>
 #include<netinet/in.h>
 #include<arpa/inet.h>
-int main(int argc, char** argv){
+int main(){
     char hello[]="hello world";
     struct sockaddr_in sa;
     int SocketFD=socket(PF_INET,SOCK_STREAM,IPPROTO_TCP);
@@ -13,9 +13,9 @@ int main(int argc, char** argv){
         exit(EXIT_FAILURE);
     }
     memset(&sa,0,sizeof sa);
-    sa.sin_port=htons(8088);
-    sa.sin_addr.s_addr=htonl(INADDR_ANY);
     sa.sin_family=AF_INET;
+    sa.sin_addr.s_addr=htonl(INADDR_ANY);
+    sa.sin_port=htons(1815);
     if(bind(SocketFD,(struct sockaddr*)&sa,sizeof sa)==-1){
         perror("bind failed");
         close(SocketFD);
