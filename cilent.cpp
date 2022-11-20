@@ -5,7 +5,6 @@
 #include<netinet/in.h>
 #include<arpa/inet.h>
 int main(){
-    char hello[]="hello world";
     struct sockaddr_in sa;
     int res;
     int SocketFD=socket(PF_INET,SOCK_STREAM,IPPROTO_TCP);
