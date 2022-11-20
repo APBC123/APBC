@@ -30,7 +30,7 @@ int main(){
     }
     for(;;){
         int ConnectFD=accept(SocketFD,NULL,NULL);
-        if(ConnectFD<0){
+        if(ConnectFD==-1){
             perror("accept failed");
             close(SocketFD);
             exit(EXIT_FAILURE);
