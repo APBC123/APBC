@@ -22,7 +22,7 @@ int main(){
         exit(EXIT_FAILURE);
 
     }
-    if(listen(SocketFD,20)){
+    if(listen(SocketFD,20)==-1){
         perror("listen failed");
         close(SocketFD);
         exit(EXIT_FAILURE);
